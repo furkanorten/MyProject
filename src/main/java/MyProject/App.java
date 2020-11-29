@@ -14,13 +14,18 @@ public class App {
         System.out.println(new App().getGreeting());
     }
 
-    public static boolean search(ArrayList<Integer> array, int e) {
-        System.out.println("inside search");
+    public static boolean search(ArrayList<Integer> array, int a, int b) {
+        System.out.println("Searching...");
         if (array == null) return false;
-  
-        for (int elt : array) {
-          if (elt == e) return true;
+        
+        int count_a = 0;
+        for (int i : array) {
+          if (i == a) count_a++;
         }
-        return false;
+
+        if(count_a == b) return true;
+        else return false;
+               
+        
       }    
 }
