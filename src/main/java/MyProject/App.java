@@ -23,7 +23,7 @@ public class App {
     
         port(getHerokuAssignedPort());
 
-        get("/", (req, res) -> "Hello, World! \nYou will be given two input boxes in the compute page. \n Give numbers for arraylist to the first box. \nGive two numbers to the second box. \nFirst will be for searched value and second will be for how many times it exists. \n Go to http://localhost:4567/compute");
+        get("/", (req, res) -> "Hello, World! \nYou will be given two input boxes in the compute page. \n Give numbers for arraylist to the first box. \nGive two numbers to the second box. \nFirst will be for searched value and second will be for how many times it exists. \n Go to .../compute");
 
         post("/compute", (req, res) -> {
           //System.out.println(req.queryParams("input1"));
