@@ -14,6 +14,8 @@ import java.util.Map;
 import spark.ModelAndView;
 import spark.template.mustache.MustacheTemplateEngine;
 
+import static spark.Spark.port;
+
 
 public class App {
     public String getGreeting() {
@@ -21,6 +23,13 @@ public class App {
     }
 
     public static void main(String[] args) {
+
+        Logger logger = LogManager.getLogger(App.class);
+
+        int port = Integer.parseInt(System.getenv("PORT"));
+        port(port);
+        logger.error("Current port number:" + port);
+    
         port(getHerokuAssignedPort());
 
         get("/", (req, res) -> "Hello, World! \nYou will be given two input boxes in the compute page. \n Give numbers for arraylist to the first box. \nGive two numbers to the second box. \nFirst will be for searched value and second will be for how many times it exists. \n Go to http://localhost:4567/compute");
